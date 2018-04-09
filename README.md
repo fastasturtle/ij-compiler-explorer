@@ -3,6 +3,6 @@
 WIP.
 
 TODO:
-- [ ] Make a plugin stub
+- [x] Make a plugin stub
 - [ ] ...
 - [ ] Profit!
