@@ -68,7 +68,12 @@ class ShowCompilerExplorer : DumbAwareAction() {
 
         fileEditorManager.createSplitter(SwingConstants.VERTICAL, window)
         window.closeFile(virtualFile, false, false)
-        return fileEditorManager.openTextEditor(OpenFileDescriptor(project, virtualFile), true) as? EditorEx
+        val descriptor = OpenFileDescriptor(project, virtualFile)
+        val editor = fileEditorManager.openTextEditor(descriptor, true) as? EditorEx ?: return null
+        val component = createEditorControls()
+        editor.permanentHeaderComponent = component
+        editor.headerComponent = component
+        return editor
     }
 
     private fun findEditorWindow(fileEditorManager: FileEditorManagerEx, virtualFile: VirtualFile): EditorWindow? {
