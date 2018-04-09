@@ -9,6 +9,8 @@ TODO:
   - [ ] compiler messages
   - [ ] controls (compiler selection, ...)
 - [ ] lifetime
+- [ ] license
+
 
 
 - [ ] install a local CE instance
